@@ -780,6 +780,174 @@ section {
     }
 }
 
+/* -------- CUSTOMER PARKING TABLE -------- */
+.owner-table-container {
+    margin: 5rem auto;
+    width: 90%;
+    max-width: 110rem;
+    background: #0f0f0f;
+    padding: 3rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 0 25px rgba(0,0,0,0.45);
+}
+
+.owner-table-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: var(--white);
+    text-align: center;
+}
+
+/* beautiful table */
+.owner-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.6rem;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.owner-table thead {
+    background: var(--main-color);
+    color: var(--white);
+}
+
+.owner-table th,
+.owner-table td {
+    padding: 1.6rem 1.2rem;
+    text-align: center;
+}
+
+.owner-table tbody tr {
+    background: #1a1a1a;
+    color: var(--white);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.owner-table tbody tr:nth-child(even) {
+    background: #161616;
+}
+
+/* hover effect */
+.owner-table tbody tr:hover {
+    background: rgba(142, 68, 173, 0.25);
+    transition: 0.25s ease;
+}
+
+/* responsive */
+@media (max-width: 650px) {
+    .owner-table-container {
+        padding: 2rem;
+    }
+    .owner-table th, .owner-table td {
+        padding: 1rem;
+        font-size: 1.4rem;
+    }
+}
+/* -------- BOOKING PAGE -------- */
+.booking-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 10%;
+  background: #0d0d0d;
+}
+
+.booking-card {
+  width: 100%;
+  max-width: 50rem;
+  background: #111;
+  padding: 4rem 3rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.booking-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.booking-details p {
+  font-size: 1.7rem;
+  color: var(--light-white);
+  margin-bottom: 1rem;
+}
+
+.booking-form {
+  margin-top: 2rem;
+}
+
+.booking-form label {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--white);
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 1.3rem;
+  font-size: 1.6rem;
+  border-radius: 0.6rem;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  margin-bottom: 2rem;
+  transition: 0.25s ease;
+}
+
+.booking-form input:focus {
+  border: 1px solid var(--main-color);
+  box-shadow: 0 0 0.6rem rgba(142, 68, 173, 0.55);
+}
+
+.booking-btn {
+  width: 100%;
+  padding: 1.4rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--main-color);
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 18px rgba(142, 68, 173, 0.4);
+}
+
+.booking-btn:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+.booking-back {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.7rem;
+  color: var(--main-color);
+  transition: 0.3s;
+}
+
+.booking-back:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 550px) {
+  .booking-card {
+    padding: 3rem 2rem;
+  }
+  .booking-title {
+    font-size: 3rem;
+  }
+}
 
 /* ---------- FOOTER ---------- */
 .footer {
