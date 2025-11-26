@@ -1070,6 +1070,108 @@ section {
     width: 100%;
   }
 }
+/* ---------- CUSTOMER VIEW BOOKINGS ---------- */
+.booking-view-section {
+  padding: 6rem 10%;
+  background: #0d0d0d;
+  min-height: 70vh;
+}
+
+.booking-view-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.booking-view-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.booking-view-table-container {
+  overflow-x: auto;
+  border-radius: 1rem;
+}
+
+.booking-view-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  font-size: 1.6rem;
+}
+
+.booking-view-table thead {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+.booking-view-table th,
+.booking-view-table td {
+  padding: 1.6rem;
+  text-align: center;
+}
+
+.booking-view-table tbody tr {
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: var(--white);
+}
+
+.booking-view-table tbody tr:nth-child(even) {
+  background: #151515;
+}
+
+.booking-view-table tbody tr:hover {
+  background: rgba(142, 68, 173, 0.3);
+  transition: .25s;
+}
+
+/* Status badges */
+.badge {
+  padding: .6rem 1.4rem;
+  border-radius: .6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge.booked {
+  background: rgba(0, 180, 0, .25);
+  color: #00e600;
+  border: 1px solid #00e600;
+}
+
+.badge.cancelled {
+  background: rgba(255, 0, 0, .25);
+  color: #ff4f4f;
+  border: 1px solid #ff4f4f;
+}
+
+/* Cancel button */
+.booking-view-cancel-btn {
+  padding: .9rem 1.8rem;
+  border-radius: .6rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  background: #e63b3b;
+  transition: .25s;
+}
+
+.booking-view-cancel-btn:hover {
+  background: #a31515;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  .booking-view-top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 
 /* ---------- FOOTER ---------- */
 .footer {

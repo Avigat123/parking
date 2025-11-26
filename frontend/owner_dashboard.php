@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>owner_dashboard</title>
+  <title>owner dashboard</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="css/style.css">
@@ -14,7 +14,7 @@
     <a href="home.php" class="logo">parking.</a>
     <nav class="navbar">
       <a href="home.php">home</a>
-      <a href="about.php">about</a>
+      <a href="about.php">view parking</a>
       <a href="package.php">pre-book</a>
       <a href="book.php">refund</a>
     </nav>

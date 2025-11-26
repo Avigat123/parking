@@ -14,7 +14,7 @@
     <a href="home.php" class="logo">parking.</a>
     <nav class="navbar">
       <a href="home.php">home</a>
-      <a href="about.php">about</a>
+      <a href="about.php">view parking</a>
       <a href="package.php">pre-book</a>
       <a href="book.php">refund</a>
     </nav>

@@ -3,7 +3,7 @@ session_start();
 
 // Only customers allowed
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'customer') {
-    echo "Access denied. Only customers can book parking.";
+    echo "Access denied.";
     exit();
 }
 
@@ -13,63 +13,60 @@ if ($conn->connect_error) {
     die("Connection Failed: " . $conn->connect_error);
 }
 
-// Default query (no search)
-$sql = "SELECT * FROM parking_spots WHERE available_slots > 0";
+$customer_id = $_SESSION['user_id'];
 
-// If search submitted
-if (isset($_POST['search'])) {
-    $location = $_POST['location'];
-    $sql = "SELECT * FROM parking_spots 
-            WHERE location LIKE '%$location%' AND available_slots > 0";
-}
-
+// Fetch customer bookings
+$sql = "SELECT b.booking_id, b.hours, b.status, p.location, p.price_per_hour
+        FROM bookings b
+        JOIN parking_spots p ON b.spot_id = p.spot_id
+        WHERE b.customer_id = '$customer_id'";
+        
 $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Available Parking Spots</title>
+    <title>My Bookings</title>
 </head>
 <body>
 
-<h2>Available Parking Spots</h2>
-<a href="customer_dashboard.php">Back to Dashboard</a>
-<br><br>
-
-<!-- Search Form -->
-<form method="POST" action="">
-    <label>Search by Location:</label><br>
-    <input type="text" name="location" placeholder="Enter area name">
-    <button type="submit" name="search">Search</button>
-</form>
-
-<br>
+<h2>Your Bookings</h2>
+<a href="customer_dashboard.php">Back to Dashboard</a><br><br>
 
 <table border="1" cellpadding="6">
     <tr>
-        <th>Spot ID</th>
+        <th>Booking ID</th>
         <th>Location</th>
+        <th>Hours</th>
         <th>Price/hr</th>
-        <th>Available Slots</th>
+        <th>Status</th>
         <th>Action</th>
     </tr>
 
-    <?php
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>
-                    <td>".$row['spot_id']."</td>
-                    <td>".$row['location']."</td>
-                    <td>".$row['price_per_hour']."</td>
-                    <td>".$row['available_slots']."</td>
-                    <td><a href='book_parking.php?spot_id=".$row['spot_id']."'>Book</a></td>
-                  </tr>";
+<?php
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+
+        echo "<tr>
+                <td>".$row['booking_id']."</td>
+                <td>".$row['location']."</td>
+                <td>".$row['hours']."</td>
+                <td>".$row['price_per_hour']."</td>
+                <td>".$row['status']."</td>";
+
+        if ($row['status'] == "booked") {
+            echo "<td><a href='cancel_booking.php?booking_id=".$row['booking_id']."'>Cancel</a></td>";
+        } else {
+            echo "<td> - </td>";
         }
-    } else {
-        echo "<tr><td colspan='5'>No parking spots found</td></tr>";
+
+        echo "</tr>";
     }
-    ?>
+} else {
+    echo "<tr><td colspan='6'>No bookings found</td></tr>";
+}
+?>
 </table>
 
 </body>

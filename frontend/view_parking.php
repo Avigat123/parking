@@ -40,7 +40,7 @@ $result = $conn->query($sql);
     <a href="home.php" class="logo">parking.</a>
     <nav class="navbar">
       <a href="home.php">home</a>
-      <a href="about.php">about</a>
+      <a href="about.php">view parking</a>
       <a href="package.php">pre-book</a>
       <a href="book.php">refund</a>
     </nav>
@@ -89,36 +89,7 @@ $result = $conn->query($sql);
 
 
 </section>
-<h2>Your Parking Spots</h2>
 
-<table border="1" cellpadding="6">
-    <tr>
-        <th>Spot ID</th>
-        <th>Location</th>
-        <th>Price/hr</th>
-        <th>Total Slots</th>
-        <th>Booked</th>
-        <th>Available</th>
-    </tr>
-
-<?php
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $available = $row['total_slots'] - $row['booked_slots'];
-        echo "<tr>
-                <td>".$row['spot_id']."</td>
-                <td>".$row['location']."</td>
-                <td>".$row['price_per_hour']."</td>
-                <td>".$row['total_slots']."</td>
-                <td>".$row['booked_slots']."</td>
-                <td>".$available."</td>
-              </tr>";
-    }
-} else {
-    echo "<tr><td colspan='6'>No parking spots added yet.</td></tr>";
-}
-?>
-</table>
 <!--footer-->
 <section class="footer">
   <div class="box-container">
@@ -126,9 +97,9 @@ if ($result->num_rows > 0) {
         <h3>quick links</h3>
           <a href="home.php"><i class="fas fa-angle-right"></i>
             home</a>
-          <a href="about.php"><i class="fas fa-angle-right"></i>about</a>
-          <a href="package.php"><i class="fas fa-angle-right"></i>package</a>
-          <a href="book.php"><i class="fas fa-angle-right"></i>book</a>
+          <a href="about.php"><i class="fas fa-angle-right"></i>view parking</a>
+          <a href="package.php"><i class="fas fa-angle-right"></i>pre book</a>
+          <a href="book.php"><i class="fas fa-angle-right"></i>refund</a>
      </div>
       <div class="box">
         <h3>extra links</h3>

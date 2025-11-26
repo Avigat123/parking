@@ -41,7 +41,7 @@ $result = $conn->query($sql);
     <a href="home.php" class="logo">parking.</a>
     <nav class="navbar">
       <a href="home.php">home</a>
-      <a href="about.php">about</a>
+      <a href="about.php">view parking</a>
       <a href="package.php">pre-book</a>
       <a href="book.php">refund</a>
     </nav>
@@ -51,10 +51,6 @@ $result = $conn->query($sql);
   <div class="heading" style="background:url(images/heading-bg-2.png) no-repeat">
     <h1>pre-booking</h1>
   </div>
-  
-<h2>Available Parking Spots</h2>
-<a href="customer_dashboard.php">Back to Dashboard</a>
-<br><br>
 
 <section class="customer-search-section">
 
