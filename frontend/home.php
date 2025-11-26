@@ -32,21 +32,21 @@
              <div class="content">
                   <span>explore, discover , travel</span>
                   <h3>park around the world</h3>
-                  <a href="package.php" class="btn">discover more</a>
+                  <a href="login.php" class="btn">discover more</a>
                 </div>
             </div>
             <div class="slide swiper-slide" style="background:url(images/home-slide-2.png) no-repeat">
                 <div class="content">
                   <span>explore, discover , travel</span>
                   <h3>park around the world</h3>
-                  <a href="package.php" class="btn">discover more</a>
+                  <a href="login.php" class="btn">discover more</a>
                 </div>
             </div>
             <div class="slide swiper-slide" style="background:url(images/home-slide-3.png) no-repeat">
                 <div class="content">
                   <span>explore, discover , travel</span>
-                  <h3>travel around the world</h3>
-                  <a href="package.php" class="btn">discover more</a>
+                  <h3>park around the world</h3>
+                  <a href="login.php" class="btn">discover more</a>
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
     </div>
 </section>
 <section class="home-packages">
-  <h1 class="heading-title">Map</h1>
+  <h1 class="heading-title">pre booking </h1>
 
   <div class="box-container">
       <div id="map"></div>

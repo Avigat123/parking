@@ -493,6 +493,141 @@ section {
     border-radius: 50%;
     margin-top: 1rem;
 }
+/* -------- OWNER SPLIT SCREEN LAYOUT -------- */
+.owner-container {
+    display: flex;
+    min-height: 90vh;
+    width: 100%;
+}
+
+.owner-left {
+    flex: 1;
+    background: url('../images/owner-bg-1.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    position: relative;
+}
+
+.owner-left::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55); /* dark overlay */
+}
+
+.owner-welcome-text {
+    position: relative;
+    max-width: 50rem;
+    text-align: left;
+    color: var(--white);
+}
+
+.owner-welcome-text h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.owner-welcome-text h1 span {
+    color: var(--main-color);
+}
+
+.owner-welcome-text p {
+    font-size: 1.7rem;
+    line-height: 1.7;
+    opacity: 0.88;
+}
+
+/* -------- RIGHT SIDE (FORM CARD) -------- */
+.owner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 3rem;
+    background: #faf7fb;
+}
+
+.owner-form-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #111;
+    letter-spacing: 0.5px;
+}
+
+/* Keep earlier black card styling layout */
+.owner-form {
+    width: 100%;
+    max-width: 45rem;
+    background: #fff;
+    padding: 3.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.owner-input-group {
+    margin-bottom: 2rem;
+}
+
+.owner-input-group label {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: .6rem;
+    color: #333;
+}
+
+.owner-input-group input {
+    width: 100%;
+    padding: 1.3rem;
+    font-size: 1.6rem;
+    border-radius: .6rem;
+    border: 1px solid #ccc;
+    background: #f6f6f6;
+    transition: .25s;
+}
+
+.owner-input-group input:focus {
+    border: 1px solid var(--main-color);
+    background: #fff;
+    box-shadow: 0 0 0.5rem rgba(142, 68, 173, 0.35);
+}
+
+.owner-btn {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--main-color);
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.owner-btn:hover {
+    background: #000;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 850px) {
+    .owner-container {
+        flex-direction: column;
+    }
+    .owner-left,
+    .owner-right {
+        flex: unset;
+        width: 100%;
+        min-height: auto;
+        padding: 4rem 2rem;
+    }
+}
+
 
 /* ---------- FOOTER ---------- */
 .footer {
