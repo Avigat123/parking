@@ -34,30 +34,112 @@ $spot = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Book Parking</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pre-booking</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <section class="header">
+    <a href="home.php" class="logo">parking.</a>
+    <nav class="navbar">
+      <a href="home.php">home</a>
+      <a href="about.php">about</a>
+      <a href="package.php">pre-book</a>
+      <a href="book.php">refund</a>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+  </section>
 
-<h2>Book Parking Spot</h2>
+  <div class="heading" style="background:url(images/booking_parking.png) no-repeat">
+    <h1>pre-booking</h1>
+  </div>
+<section class="booking-section">
 
-<p><strong>Location:</strong> <?php echo $spot['location']; ?></p>
-<p><strong>Price per hour:</strong> <?php echo $spot['price_per_hour']; ?></p>
-<p><strong>Available Slots:</strong> <?php echo $spot['available_slots']; ?></p>
+  <div class="booking-card">
 
-<form action="book_parking_process.php" method="POST">
+    <h2 class="booking-title">Book Parking Spot</h2>
 
-    <input type="hidden" name="spot_id" value="<?php echo $spot_id; ?>">
+    <div class="booking-details">
+      <p><strong>Location:</strong> <?php echo $spot['location']; ?></p>
+      <p><strong>Price per hour:</strong> ₹<?php echo $spot['price_per_hour']; ?></p>
+      <p><strong>Available Slots:</strong> <?php echo $spot['available_slots']; ?></p>
+    </div>
 
-    <label>Hours:</label><br>
-    <input type="number" name="hours" min="1" required><br><br>
+    <form action="book_parking_process.php" method="POST" class="booking-form">
 
-    <button type="submit">Confirm Booking</button>
-</form>
+      <input type="hidden" name="spot_id" value="<?php echo $spot_id; ?>">
 
-<br>
-<a href="view_parking_customer.php">Back</a>
+      <label>Hours:</label>
+      <input type="number" name="hours" min="1" required placeholder="Enter hours">
 
+      <button type="submit" class="booking-btn">Confirm Booking</button>
+    </form>
+
+    <a href="view_parking_customer.php" class="booking-back">← Back</a>
+  </div>
+
+</section>
+
+<!--footer-->
+<section class="footer">
+  <div class="box-container">
+     <div class="box">
+        <h3>quick links</h3>
+          <a href="home.php"><i class="fas fa-angle-right"></i>
+            home</a>
+          <a href="about.php"><i class="fas fa-angle-right"></i>about</a>
+          <a href="package.php"><i class="fas fa-angle-right"></i>package</a>
+          <a href="book.php"><i class="fas fa-angle-right"></i>book</a>
+     </div>
+      <div class="box">
+        <h3>extra links</h3>
+          <a href="#"><i class="fas fa-angle-right"></i>
+            ask questions</a>
+             <a href="#"><i class="fas fa-angle-right"></i>
+            about</a>
+             <a href="#"><i class="fas fa-angle-right"></i>
+            privacy policy</a>
+             <a href="#"><i class="fas fa-angle-right"></i>
+            terms of use</a>
+          
+     </div>
+       <div class="box">
+        <h3>contact info</h3>
+          <a href="#"><i class="fas fa-phone"></i>
+            +869-977-1214</a>
+             <a href="#"><i class="fas fa-phone"></i>
+            +869-977-1214</a>
+              <a href="#"><i class="fas fa-envelope"></i>
+            vansshbhargav@gmail.com </a>
+              <a href="#"><i class="fas fa-map"></i>chandigarh , india</a>
+  </div>
+
+   
+       <div class="box">
+        <h3>follow us</h3>
+          <a href="#"><i class="fas fa-instagram"></i>
+            instagram</a>
+             <a href="#"><i class="fas fa-x"></i>
+            X</a>
+             <a href="#"><i class="fas fa-linkedin"></i>
+            linkedin</a>
+           
+            </div>
+  </div>
+  <div class="credit"> </div>
+</section>
+
+
+
+
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  
+  <script src="js/script.js"></script>
 </body>
 </html>
